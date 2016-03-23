@@ -2,13 +2,14 @@
 layout: bootcamp
 root: .
 venue: University of Michigan
-address: Room R0220 - Ross School of Business - 701 Tappan Street, Central Campus
+address: Room R0210 - Ross School of Business - 701 Tappan Street, Central Campus
 country: United-States
-humandate: June 1-4, 2015
+humandate: May 9-12, 2016
 humantime: 9:00 am - 5:00 pm
-startdate: 2015-06-01
-enddate: 2015-06-04
+startdate: 2016-05-09
+enddate: 2016-06-12
 registration: restricted
+coordinators: [ "Teddy Dewitt", "Todd Schifeling" ]
 instructor: ["Jon Atwell","Mike Anderson","Jerry Davis","Zakir Durumeric","Gareth Keeves","Cliff Lampe","Colleen Van Lent","Brian Noble",  
 "Katharina Reinecke","Eric Seymour"]
 helpers: [ "David Adrian", "Joshua Adkins", "Antonio Deusany de Carvalho Junior", "Ariana Mirian" ]
@@ -40,6 +41,12 @@ Organizing committee: Jerry Davis, H. V. Jagadish, Cliff Lampe, and Brian Noble
 </p>
 
 <!-- This block displays the instructors' names if they are available. -->
+{% if page.coordinators %}
+<p>
+  <strong>Coordinators:</strong>
+  {{page.coordinators | join: ', ' %}}
+</p>
+{% endif %}
 {% if page.instructor %}
 <p>
   <strong>Instructors:</strong>

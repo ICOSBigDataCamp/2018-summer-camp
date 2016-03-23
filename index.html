@@ -1,0 +1,186 @@
+---
+layout: bootcamp
+root: .
+venue: University of Michigan
+address: Room R0220 - Ross School of Business - 701 Tappan Street, Central Campus
+country: United-States
+humandate: June 1-4, 2015
+humantime: 9:00 am - 5:00 pm
+startdate: 2015-06-01
+enddate: 2015-06-04
+registration: restricted
+instructor: ["Jon Atwell","Mike Anderson","Jerry Davis","Zakir Durumeric","Gareth Keeves","Cliff Lampe","Colleen Van Lent","Brian Noble",  
+"Katharina Reinecke","Eric Seymour"]
+helpers: [ "David Adrian", "Joshua Adkins", "Antonio Deusany de Carvalho Junior", "Ariana Mirian" ]
+contact: schifelt@umich.edu
+---
+<!--
+    Edit the values in the parameter block above to be appropriate for your bootcamp.
+    Please use three-letter month names for the 'humandate' field.
+-->
+
+<h2>General Information</h2>
+
+<p>
+  Social  and  organizational  life are  increasingly  conducted  or
+tracked online  through electronic  media, from emails  to Twitter
+feed  to dating  sites to  GPS  phone tracking.  The traces  these
+activities leave  behind have  acquired the (misleading)  title of
+“big data.” It is  a good bet that within a  few years, a standard
+part of  graduate training in  the social sciences will  include a
+hefty dose of  “how to make use of big  data,” just as statistical
+analysis is a  standard part of such training today.  The ICOS Big
+Data Camp  aims to  make big  data accessible  for people  with no
+prior background. We  want people to leave  with enough confidence
+and basic knowledge  to be able to know what  is possible in their
+research and  where they  might go next,  drawing on  resources at
+the University of Michigan.
+
+Organizing committee: Jerry Davis, H. V. Jagadish, Cliff Lampe, and Brian Noble
+</p>
+
+<!-- This block displays the instructors' names if they are available. -->
+{% if page.instructor %}
+<p>
+  <strong>Instructors:</strong>
+  {{page.instructor | join: ', ' %}}
+</p>
+{% endif %}
+{% if page.helpers %}
+<p>
+  <strong>Helpers:</strong>
+  {{page.helpers | join: ', ' %}}
+</p>
+{% endif %}
+
+<!--
+    Modify this block to reflect the target audience for your bootcamp.
+    In particular, if it is only open to people from a particular institution,
+    or if specialized prerequisite knowledge is required, please mention that.
+-->
+<p>
+  <strong>Who:</strong>
+  The course is aimed at graduate students and other researchers.
+</p>
+
+<!--
+    This block displays the address and links to a map showing directions.
+-->
+{% if page.latlng %}
+<p>
+  <strong>Where:</strong>
+  {{ page.address }}.
+  Get directions with
+  <a href="http://www.openstreetmap.org/?mlat={{ page.latlng | replace:',','&mlon=' }}&zoom=16">OpenStreetMap</a>
+  or
+  <a href="http://maps.google.com/maps?q={{ page.latlng }}">Google Maps</a>.
+</p>
+{% endif %}
+
+<!--
+    Modify the block below if there are any special requirements.
+-->
+<p>
+  <strong>Requirements:</strong>
+  Participants must bring a laptop with a few specific software packages installed
+  (listed below).
+</p>
+
+<!--
+    This block automatically inserts a contact email address if one has been specified for the page.
+    If one hasn't, this block inserts the generic contact address for Software Carpentry.
+-->
+<p>
+  <strong>Contact</strong>:
+  Please mail
+  {% if page.contact %}
+    <a href='mailto:{{page.contact}}'>{{page.contact}}</a>
+  {% else %}
+    <a href='mailto:{{site.contact}}'>{{site.contact}}</a>
+  {% endif %}
+  for more information.
+</p>
+<p><strong>Resources</strong>: Go <a href='resources/'>here</a> for example papers and data sources.</p>
+
+<hr/>
+
+<!--
+    Edit this block to show the syllabus and schedule for your bootcamp.
+-->
+<h2>Schedule</h2>
+
+<table class="table table-striped">
+  <tr> <td>Monday</td>  <td>09:00</td>   <td>Introduction and Overview with Jerry Davis
+  (Intro <a href="slides/jerry_big_data_intro.ppt">ppt</a>,
+  <a href="slides/jerry_big_data_intro.pdf">pdf</a>.  
+  Assignment <a href="slides/icos_bigdata_assignment.pptx">ppt</a>, 
+  <a href="slides/icos_bigdata_assignment.pdf">pdf</a>)</td> </tr>
+  <tr> <td></td>        <td>10:15</td>   <td>Break</td> </tr>
+  <tr> <td></td>        <td>10:30</td>   <td>Hero's Journey #1 - Cliff Lampe</td> </tr>
+  <tr> <td></td>        <td>11:15</td>   <td>Hero's Journey #2 - Katharina Reinecke</td> </tr>
+  <tr> <td></td>        <td>12:00</td>   <td>Lunch break</td> </tr>
+  <tr> <td></td>        <td>1:00</td>    <td>Group formation & How to learn in groups: lessons from design teams, Brian Noble</td> </tr>
+  <tr> <td></td>        <td>2:00</td>    <td>The Setup & Command line with Todd Schifeling 
+    (Tutorials: <a href='http://nbviewer.ipython.org/url/ibug-um.github.io/2014-summer-camp/setup/the-setup.ipynb'>install</a>, 
+    <a href='http://nbviewer.ipython.org/url/ibug-um.github.io/2014-summer-camp/setup/the-command-line.ipynb'>command line</a>)</td> </tr>
+  <tr> <td>Tuesday</td> <td>09:00-10:45</td>   <td>Introduction to SQL with Mike Anderson 
+    (Slides: <a href="slides/introductionToSQLnew.ppt">ppt</a>
+      <a href="slides/introductionToSQL.pdf">pdf</a>)</td> </tr>
+  <tr> <td></td>        <td>10:45-11:00</td>   <td>Coffee Break</td> </tr>
+  <tr> <td></td>        <td>11:00-12:00</td>   <td>Using SQL with Eric Seymour 
+    (Materials: <a href="slides/seymour_sql_tutorial.zip">zip file</a>)</td> </tr>
+  <tr> <td></td>        <td>12:00-1:00</td>   <td>Lunch break</td> </tr>
+  <tr> <td></td>        <td>1:00-5:00</td>    <td>Group Work (<a href="data/">play data</a>)</td> </tr>
+  <tr> <td></td>        <td>4:00-5:00</td>    <td>Check-in and end of day discussion </td> </tr>
+  </td></tr>
+  <tr> <td>Wednesday</td> <td>09:00-10:45</td> <td>Introduction to Python with Colleen Van Lent 
+    (<a href="slides/ICOS-python-lecture.html">HTML</a>,
+    <a href="slides/ICOS Python lecture2005.ipynb">Notebook</a>)</td> </tr>
+  <tr> <td></td>        <td>10:45-11:00</td>   <td>Coffee Break</td> </tr>
+  <tr> <td></td>        <td>11:00-12:00</td>   <td>Python Jon
+    (<a href="http://github.com/atwel/BigData2015">Link to code</a>)
+    </td> </tr>
+  <tr> <td></td>        <td>12:00-1:00</td>   <td>Lunch break</td> </tr>
+  <tr> <td></td>        <td>1:00-4:00</td>    <td>Group Work 
+    (<a href="scraping/">scraping links</a>)</td> </tr>
+  <tr> <td></td>        <td>4:00-5:00</td>    <td>Check-in and end of day discussion </td> </tr>
+  <tr> <td><a href="https://docs.google.com/a/umich.edu/forms/d/10shOspeb1kl86crZ4rxhvVNg0QqD025z0jGnhd15XTg/viewform?usp=send_form">SIGN IN SHEET</a></td><td></td><td></td></tr>
+  <tr> <td>Thursday</td> <td>9:00-9:20</td>   <td>Now What? with Sharon Broude Geva
+    (<a href="slides/Big Data Summer Camp 2015 - ARC info.pdf">Slides</a>)</td> </tr>
+  <tr> <td></td><td>09:20-10:45</td>  <td>Introduction to APIs with Zakir Durumeric 
+    (<a href="slides/twitter-lib-install.html">Install</a>,
+    <a href="apis/examples.zip">Code</a>,
+    <a href="apis/api-lecture.txt">Lecture</a>)</td> </tr>
+  <tr> <td></td>        <td>10:45-11:00</td>   <td>Coffee Break</td> </tr>
+  <tr> <td></td>        <td>11:00-12:00</td>   <td>Using APIs with Gareth Keeves
+  </td> </tr>
+  <tr> <td></td>        <td>12:00-1:00</td>   <td>Lunch break</td> </tr>
+  <tr> <td></td>        <td>1:00-1:30</td>   <td>Music API with Antonio Deusany de Carvalho Junior
+    (<a href="http://www.deusanyjunior.dj/wp-content/uploads/LastFM.ipynb_.zip">notebook</a>)</td> </tr>
+  <tr> <td></td>        <td>1:00-4:00</td>    <td>Group Work & Python + SQL 
+    (<a href="slides/Scraping-tree-explained.pdf">slides</a>,
+    <a href="scraping/ICOS_Tyler_examples.zip">code</a>)</td> </tr>
+  <tr> <td></td>        <td>4:00-5:00</td>    <td>Check-in and end of day discussion </td> </tr>
+  <tr> <td>Thursday June 11th</td> <td>1:00-4:00</td>  <td>Final Session with Group Presentations. Ross R0220</td> </tr>
+  <tr> <td></td>        <td>4:00-5:00</td>    <td>Dominicks!</td> </tr>
+  
+</table>
+
+<hr/>
+
+<!--
+    Edit the setup instructions in _includes/setup.html to reflect your bootcamp.
+    (In particular, most bootcamps teach either Python or R, not both.)
+-->
+
+<h2>Setup</h2>
+
+<p>
+  To participate in the ICOS Big Data Summercamp, 
+  you will need working copies of the software described below.
+  Please make sure to install everything
+  (or at least to download the installers)
+  <em>before</em> the start of your bootcamp.
+</p>
+
+{% include setup.html %}

@@ -12,6 +12,7 @@ registration: restricted
 coordinators: [ "Teddy DeWitt" ]
 instructor: ["Cassandra Chambers","Jackie Cohen", "Jerry Davis","Teddy DeWitt","Gareth Keeves", "Ronnie Lee","Colleen Van Lent"]
 helpers: ["Nivi Karki","Ronnie Lee","Jeff Lockhart"]
+speakers: ["Fred Feinberg", "Felix Kabo", "Julian Katz-Samuels"]
 contact: teddydew@umich.edu
 ---
 <!--
@@ -58,7 +59,12 @@ Organizing committee: Jerry Davis, H. V. Jagadish, Cliff Lampe, and Brian Noble
   {{page.helpers | join: ', ' %}}
 </p>
 {% endif %}
-
+{% if page.speakers %}
+<p>
+  <strong>Speakers:</strong>
+  {{page.speakers | join: ', ' %}}
+</p>
+{% endif %}
 <!--
     Modify this block to reflect the target audience for your bootcamp.
     In particular, if it is only open to people from a particular institution,

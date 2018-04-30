@@ -11,8 +11,8 @@ Social and organizational life are increasingly conducted online through electro
 
 
 
-Data within this repository is from the following:
+## Data within this repository is from the following:
 
-Daily Weather Summaries: [NOAA NCDC](https://www.ncdc.noaa.gov/cdo-web/)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Daily Weather Summaries: [NOAA NCDC](https://www.ncdc.noaa.gov/cdo-web/)
 
-Hourly Weather Summaries: [NEWA at Cornell](http://newa.cornell.edu/index.php?page=hourly-weather)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hourly Weather Summaries: [NEWA at Cornell](http://newa.cornell.edu/index.php?page=hourly-weather)

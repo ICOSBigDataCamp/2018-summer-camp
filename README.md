@@ -16,3 +16,7 @@ Social and organizational life are increasingly conducted online through electro
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Daily Weather Summaries: [NOAA NCDC](https://www.ncdc.noaa.gov/cdo-web/)
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hourly Weather Summaries: [NEWA at Cornell](http://newa.cornell.edu/index.php?page=hourly-weather)
+
+
+### License
+Please refer to the [license](https://github.com/ICOSBigDataCamp/2018-summer-camp/blob/master/LICENSE.md) for accreditation and usage description. 

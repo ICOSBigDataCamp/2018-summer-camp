@@ -1,0 +1,7 @@
+CREATE TABLE directors
+	(`company_name` varchar(100), `director_name` varchar(100), `title` varchar(5), `age` int, `salary` int, `no_of_board` int, `company_hq_city` varchar(50), `company_hq_state` varchar(2), `data_yr` int)
+;
+
+SELECT A.company_name AS TiedTo, B.company_name AS TiedFrom 
+FROM directors A INNER JOIN directors B ON A.director_name=B.director_name
+WHERE A.company_name <> B.company_name

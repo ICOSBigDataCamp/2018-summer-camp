@@ -2,16 +2,17 @@
 layout: bootcamp
 root: .
 venue: University of Michigan
-address: Room R0210 - Ross School of Business - 701 Tappan Street, Central Campus
+address: Ross School of Business - 701 Tappan Street, Central Campus
 country: United-States
-humandate: Jun 5-9, 2017
+humandate: May 14th-18th 2018
 humantime: 9:00 am - 5:00 pm
-startdate: 2017-06-05
-enddate: 2017-06-09
+startdate: 2018-05-14
+enddate: 2018-05-18
 registration: restricted
-instructor: ["Jon Atwell","Mike Anderson","Jerry Davis","Zakir Durumeric","Gareth Keeves","Cliff Lampe","Colleen Van Lent","Brian Noble",  
-"Katharina Reinecke","Eric Seymour"]
-helpers: [ "David Adrian", "Joshua Adkins", "Antonio Deusany de Carvalho Junior", "Ariana Mirian" ]
+coordinators: [ "Teddy DeWitt" ]
+instructor: ["Abigail Azari","Jackie Cohen","Teddy DeWitt","Ronnie Lee","Jeff Lockhart","Patrick Park","Colleen Van Lent"]
+helpers: ["Abigail Azari","Teddy DeWitt","Mana Heshmati","Ronnie Lee","Jeff Lockhart", "Patrick Park"]
+speakers: ["Adriene Beltz","Elizabeth Bruch","Emilee Rader"]
 contact: teddydew@umich.edu
 ---
 <!--
@@ -40,6 +41,12 @@ Organizing committee: Jerry Davis, H. V. Jagadish, Cliff Lampe, and Brian Noble
 </p>
 
 <!-- This block displays the instructors' names if they are available. -->
+{% if page.coordinators %}
+<p>
+  <strong>Coordinators:</strong>
+  {{page.coordinators | join: ', ' %}}
+</p>
+{% endif %}
 {% if page.instructor %}
 <p>
   <strong>Instructors:</strong>
@@ -48,11 +55,16 @@ Organizing committee: Jerry Davis, H. V. Jagadish, Cliff Lampe, and Brian Noble
 {% endif %}
 {% if page.helpers %}
 <p>
-  <strong>Helpers:</strong>
+  <strong>Guides:</strong>
   {{page.helpers | join: ', ' %}}
 </p>
 {% endif %}
-
+{% if page.speakers %}
+<p>
+  <strong>Speakers:</strong>
+  {{page.speakers | join: ', ' %}}
+</p>
+{% endif %}
 <!--
     Modify this block to reflect the target audience for your bootcamp.
     In particular, if it is only open to people from a particular institution,
@@ -71,9 +83,9 @@ Organizing committee: Jerry Davis, H. V. Jagadish, Cliff Lampe, and Brian Noble
   <strong>Where:</strong>
   {{ page.address }}.
   Get directions with
-  <a href="http://www.openstreetmap.org/?mlat={{ page.latlng | replace:',','&mlon=' }}&zoom=16">OpenStreetMap</a>
+  <a href="http://www.openstreetmap.org/?mlat={{ page.latlng | replace:',','&mlon=' }}&zoom=16" target="_blank">OpenStreetMap</a>
   or
-  <a href="http://maps.google.com/maps?q={{ page.latlng }}">Google Maps</a>.
+  <a href="http://maps.google.com/maps?q={{ page.latlng }}" target="_blank">Google Maps</a>.
 </p>
 {% endif %}
 
@@ -100,7 +112,7 @@ Organizing committee: Jerry Davis, H. V. Jagadish, Cliff Lampe, and Brian Noble
   {% endif %}
   for more information.
 </p>
-<p><strong>Resources</strong>: Go <a href='resources/'>here</a> for example papers and data sources.</p>
+<p><strong>Resources</strong>: Go <a href='resources/' target="_blank">here</a> for example papers and data sources.</p>
 
 <hr/>
 
@@ -108,46 +120,79 @@ Organizing committee: Jerry Davis, H. V. Jagadish, Cliff Lampe, and Brian Noble
     Edit this block to show the syllabus and schedule for your bootcamp.
 -->
 <h2>Schedule</h2>
-
 <table class="table table-striped">
-  <tr> <td>Monday</td>  <td>09:00</td>   <td>Introduction and Overview with Jerry Davis
-  (Intro <a href="slides/jerry_big_data_intro.ppt">ppt</a>,
-  <a href="slides/jerry_big_data_intro.pdf">pdf</a>.  
-  Assignment <a href="slides/icos_bigdata_assignment.pptx">ppt</a>, 
-  <a href="slides/icos_bigdata_assignment.pdf">pdf</a>)</td> </tr>
-  <tr> <td></td>        <td>10:15</td>   <td>Break</td> </tr>
-  <tr> <td></td>        <td>10:30</td>   <td>Hero's Journey #1 - Cliff Lampe</td> </tr>
-  <tr> <td></td>        <td>11:15</td>   <td>Hero's Journey #2 - Katharina Reinecke</td> </tr>
-  <tr> <td></td>        <td>12:00</td>   <td>Lunch break</td> </tr>
-  <tr> <td></td>        <td>1:00</td>    <td>Group formation & How to learn in groups: lessons from design teams, Brian Noble</td> </tr>
-  <tr> <td></td>        <td>2:00</td>    <td>The Setup & Command line with Todd Schifeling 
-    (Tutorials: <a href='http://nbviewer.ipython.org/url/ibug-um.github.io/2014-summer-camp/setup/the-setup.ipynb'>install</a>, 
-    <a href='http://nbviewer.ipython.org/url/ibug-um.github.io/2014-summer-camp/setup/the-command-line.ipynb'>command line</a>)</td> </tr>
-  <tr> <td>Tuesday</td> <td>09:00-10:45</td>   <td>Introduction to SQL with Mike Anderson 
-    (Slides: <a href="slides/introductionToSQLnew.ppt">ppt</a>
-      <a href="slides/introductionToSQL.pdf">pdf</a>)</td> </tr>
-  <tr> <td></td>        <td>10:45-11:00</td>   <td>Coffee Break</td> </tr>
-  <tr> <td></td>        <td>11:00-12:00</td>   <td>Using SQL with Jeff Jones 
-    (Materials: <a href="slides/seymour_sql_tutorial.zip">zip file</a>)</td> </tr>
-  <tr> <td></td>        <td>12:00-1:00</td>   <td>Lunch break</td> </tr>
-  <tr> <td></td>        <td>1:00-5:00</td>    <td>Group Work (<a href="data/">play data</a>)</td> </tr>
-  <tr> <td></td>        <td>4:00-5:00</td>    <td>Check-in and end of day discussion </td> </tr>
-  </td></tr>
+  <tr> <td>Monday</td>  <td>9:00</td>   <td>Introduction and Overview with Jerry Davis (Intro <a href="slides/Jerry big data intro 2017.pptx" target="_blank">ppt</a>,
+  <a href="slides/Jerry big data intro 2017.pdf" target="_blank">pdf</a>.)  </td> </tr>
+ 
+ <!-- <tr> <td></td>        <td>10:00</td>   <td>Hero's Journey-  Speaker TBD</td> </tr> -->
+  <!--<tr> <td></td>        <td>10:00</td>   <td><span style="background-color: #FFFF00">Hero's Journey-  Speaker TBD</span></td> </tr>-->
+  <tr> <td></td>        <td>10:30</td>   <td>Break</td> </tr>
+  <tr> <td></td>        <td>10:45</td>   <td> Module 0 - Setup and Command Line Introduction with Jeff Lockhart (BASH Command Sheet  <a href='slides/BASH_Cheat_Sheet.pdf'>pdf</a>) </td> </tr>
+  <tr> <td></td>        <td>12:00 - 1:00</td>   <td>Lunch</td> </tr>
+  <tr> <td></td>        <td>12:15</td>   <td>Lunch Speaker Series - Emilee Rader</td> </tr>
+  <tr> <td></td>        <td>1:00 - 1:30</td>    <td>Lunch Clean Up and Coffee Pick Me Up</td> </tr>
+           
+  <!--<tr> <td></td>        <td>1:30</td>    <td>Group formation & How to learn in groups: l.essons from design teams, Brian Noble (<a href="slides/Monday-Noble.pptx">ppt</a>)</td> </tr> -->
+  <tr> <td></td>        <td>1:30</td>   <td>Module 1 - Introduction to SQL with Teddy DeWitt
+    (Main slides: <a href="slides/SQL Final_Student_2017.ppt" target="_blank">pdf</a>, slides on joins: <a href="slides/JOINS -  An Overview.pdf" target="_blank">pdf</a>)</td> </tr>
+  <tr> <td></td>       <td>3:00</td>    <td>Afternoon Panel</td> </tr>
+  <tr> <td></td>       <td>4:00</td>    <td>Project Overview and Team Formation- Past Examples and Data Sources <a href="slides/icos_bigdata_assignment_2017.pdf" target="_blank">assignment slides</a></td> </tr>
+  <tr> <td></td>       <td>5:00</td>    <td>Depart</td> </tr> 
+  <tr> <td>Tuesday</td><td>9:00</td>    <td>SQL Challenge <a href="slides/SQL Challenge.pdf" target="_blank">(pdf)</a> <a href="slides/SQL Challenge.ppt" target="_blank">(ppt)</a>
+                                               [Neccesary Additional Files: <a href="slides/director_db_schema.txt" target="_blank">"Directors Schema"</a> <a href="slides/direct99_sqlite.csv" target="_blank">"Directors Data"</a> <a href ="slides/AT_Retail_DB.db" target="_blank">"Retail DB"</a>] </td> </tr>
+  <tr> <td></td>       <td>9:45</td>    <td>SQL Exercise Review</td> </tr> 
+  <tr> <td></td>       <td>10:00</td>   <td>Break</td> </tr>
+  <tr> <td></td>       <td>10:15</td>   <<td>Module 2 - Introduction to Python with Colleen Van Lent and Jackie Cohen </td> </tr> 
+     <!--(<a href="slides/ICOS+Python+lecture2017.html" target="_blank">HTML</a>,
+    <a href="slides/ICOS+Python+lecture2017.ipynb" target="_blank">Notebook</a>) -->
+  <tr> <td></td>       <td>12:00 - 1:00 </td>   <td>Lunch</td> </tr>
+  <tr> <td></td>       <td>12:15</td>   <td>Lunch Speaker Series - Adriene Beltz  </td> </tr>
+  <tr> <td></td>       <td>1:00 - 1:30</td>    <td>Lunch Clean Up and Coffee Pick Me Up</td> </tr>
+  <tr> <td></td>       <td>1:30</td>   <td>Module 3 - Structures and Scraping </td> </tr>
+  <tr> <td></td>       <td>3:30</td>   <td>Group Work</td> </tr>
+  <tr> <td></td>       <td>5:00</td>   <td>Depart</td> </tr>
+   
+  <tr> <td>Wednesday</td><td>9:00</td>    <td>Module 4 - APIs</td> </tr>
+  <tr> <td></td>       <td>10:15</td>   <td>Break</td> </tr>
+  <tr> <td></td>       <td>10:30</td>   <td>Module 5 - Introduction to Text Analysis with Python</td></tr>
+  <tr> <td></td>       <td>12:00 - 1:00 </td>   <td>Lunch</td> </tr>
+  <tr> <td></td>       <td>12:15</td>   <td>Lunch Speaker Series - Elizabeth Bruch</td> </tr>
+  <tr> <td></td>       <td>1:00 - 1:30</td>    <td>Lunch Clean Up and Coffee Pick Me Up</td> </tr>
+  <tr> <td></td>       <td>1:30</td>   <td>Module 6 - Introduction to Map/Reduce </td> </tr>
+  <tr> <td></td>       <td>3:30</td>   <td>Group Work</td> </tr>
+  <tr> <td></td>       <td>5:00</td>   <td>Depart</td> </tr>
+    
+  <tr> <td>Thursday</td><td>9:00</td>   <td>Module 7 - Introduction to Data Analysis and Machine Learning with Python</td> </tr>
+  <tr> <td></td>       <td>1:15-2:30 </td>   <td>Lunch</td> </tr>
+  <tr> <td></td>       <td>1:30</td>   <td> Univesity of Michigan Big Data Resources Panel </td> </tr>
+  <tr> <td></td>       <td>2:30</td>   <td> Questions and Follow-up </td> </tr>
+  <tr> <td></td>       <td>3:00</td>   <td>HACKATHON BEGINS</td> </tr>   
+  <tr> <td></td>       <td>5:00</td>   <td>PIZZA ARRIVES</td> </tr>
+  <tr> <td></td>       <td>5:00 - 10:00</td>   <td>Rooms at Ross will be available until building closes at 10</td> </tr>
+      
+  <tr> <td>Friday </td><td>9:00</td>    <td>HACKATHON!</td> </tr>
+  <tr> <td></td>       <td>10:00</td>   <td>HACKATHON!</td> </tr>
+  <tr> <td></td>       <td>10:00</td>   <td>HACKATHON!</td> </tr>
+  <tr> <td></td>       <td>11:00</td>   <td>HACKATHON!</td> </tr>
+  <tr> <td></td>       <td>12:00</td>   <td>Lunch - Come get some and keep working</td> </tr>
+  <tr> <td></td>       <td>1:00</td>   <td>HACKATHON!</td> </tr>
+  <tr> <td></td>       <td>3:00</td>   <td>Presentations Begin</td> </tr>
+  <tr> <td></td>       <td>5:00</td>   <td>Feedback</td> </tr>
+  <tr> <td></td>       <td>6:00</td>   <td>Celebration at Dominick's</td> </tr>
+
+<!--
   <tr> <td>Wednesday</td> <td>09:00-10:45</td> <td>Introduction to Python with Colleen Van Lent 
-    (<a href="slides/ICOS-python-lecture.html">HTML</a>,
-    <a href="slides/ICOS Python lecture2005.ipynb">Notebook</a>)</td> </tr>
+    (<a href="slides/ICOS Big Data Camp-2016.html">HTML</a>,
+    <a href="slides/ICOS Big Data Camp-2016.ipynb">Notebook</a>)</td> </tr>
   <tr> <td></td>        <td>10:45-11:00</td>   <td>Coffee Break</td> </tr>
-  <tr> <td></td>        <td>11:00-12:00</td>   <td>Python Jon
-    (<a href="http://github.com/atwel/BigData2015">Link to code</a>)
-    </td> </tr>
+  <tr> <td></td>        <td>11:00-12:00</td>   <td>Using Python with Eun Woo Kim & Reed Coke (Slides: <a href="slides/Python and NLP.pptx">ppt</a>, <a href="slides/Python and NLP.pdf">pdf</a>)</td> </tr>
   <tr> <td></td>        <td>12:00-1:00</td>   <td>Lunch break</td> </tr>
-  <tr> <td></td>        <td>1:00-4:00</td>    <td>Group Work 
+  <tr> <td></td>        <td>1:00-1:20</td>    <td>Using text re-use analysis to track legislative influence with Julian Katz-Samuels</td> </tr>
+  <tr> <td></td>        <td>1:20-4:00</td>    <td>Group Work 
     (<a href="scraping/">scraping links</a>)</td> </tr>
   <tr> <td></td>        <td>4:00-5:00</td>    <td>Check-in and end of day discussion </td> </tr>
   <tr> <td><a href="https://docs.google.com/a/umich.edu/forms/d/10shOspeb1kl86crZ4rxhvVNg0QqD025z0jGnhd15XTg/viewform?usp=send_form">SIGN IN SHEET</a></td><td></td><td></td></tr>
-  <tr> <td>Thursday</td> <td>9:00-9:20</td>   <td>Now What? with Sharon Broude Geva
-    (<a href="slides/Big Data Summer Camp 2015 - ARC info.pdf">Slides</a>)</td> </tr>
-  <tr> <td></td><td>09:20-10:45</td>  <td>Introduction to APIs with Zakir Durumeric 
+  <tr> <td>Thursday</td>  <td>09:00-10:45</td>  <td>Introduction to APIs with Todd Schifeling 
     (<a href="slides/twitter-lib-install.html">Install</a>,
     <a href="apis/examples.zip">Code</a>,
     <a href="apis/api-lecture.txt">Lecture</a>)</td> </tr>
@@ -155,15 +200,15 @@ Organizing committee: Jerry Davis, H. V. Jagadish, Cliff Lampe, and Brian Noble
   <tr> <td></td>        <td>11:00-12:00</td>   <td>Using APIs with Gareth Keeves
   </td> </tr>
   <tr> <td></td>        <td>12:00-1:00</td>   <td>Lunch break</td> </tr>
-  <tr> <td></td>        <td>1:00-1:30</td>   <td>Music API with Antonio Deusany de Carvalho Junior
-    (<a href="http://www.deusanyjunior.dj/wp-content/uploads/LastFM.ipynb_.zip">notebook</a>)</td> </tr>
+  <tr> <td></td> <td>1:00-1:20</td>   <td>Now What? with Mariana Carrasco-Teja, Assistant Director of MICDE
+    (<a href="slides/Big Data Summer Camp - ARC info 2016.pptx">Slides</a>)</td> </tr>
   <tr> <td></td>        <td>1:00-4:00</td>    <td>Group Work & Python + SQL 
     (<a href="slides/Scraping-tree-explained.pdf">slides</a>,
     <a href="scraping/ICOS_Tyler_examples.zip">code</a>)</td> </tr>
   <tr> <td></td>        <td>4:00-5:00</td>    <td>Check-in and end of day discussion </td> </tr>
-  <tr> <td>Thursday June 11th</td> <td>1:00-4:00</td>  <td>Final Session with Group Presentations. Ross R0220</td> </tr>
+  <tr> <td>Friday</td> <td>1:00-4:00</td>  <td>Final Session with Group Presentations. Ross R0210</td> </tr>
   <tr> <td></td>        <td>4:00-5:00</td>    <td>Dominicks!</td> </tr>
-  
+  -->
 </table>
 
 <hr/>

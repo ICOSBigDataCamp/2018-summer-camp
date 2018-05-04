@@ -18,18 +18,19 @@
     <p>
       Python is becoming very popular in scientific computing,
       and it's a great language for teaching general programming concepts due to its easy-to-read syntax.
-      We teach with Python version 2.7,
-      since it is still the most widely used.
-      Installing all the scientific packages for Python individually can be a bit difficult(TESTING),
-      so we recommend an all-in-one installer.
+      While the 2.7 branch is commonly used, we are officially migrating to the 3.6 branch.  All of the packages crucial
+      for our purposes have been migrated. Installing all the scientific packages for Python individually can be a bit difficult,
+      so we recommend an all in one installer. One of the best is <a href="https://www.continuum.io/downloads">Anaconda</a> by Continuum Analytics.
+   
     </p>
   </div>
   <div class="span6">
     <h4>Jupyter Notebook</h4>
-    <p>The <a href="http://ipython.org/notebook.html">Jupyter Notebook</a> (formerly known as the IPython Notebook) is a web-based interface for interactive computing with 
-      Python. Individual notebooks are composable, executable, and sharable documents 
+    <p>The <a href="http://http://jupyter.org/">Jupyter Notebook</a> is a web-based interface for interactive computing. The Jupyter Notebook
+      has support for over 40 programming languages, including those popular in Data Science such R, Julia, Scala -  and most importantly, Python. 
+      Individual notebooks are composable, executable, and sharable documents 
       that mix text, code, data, and visualizations. The Jupyter Notebook comes pre-loaded
-      on many all-in-one python installers like <a href="http://continuum.io/anacondace.html">Anaconda CE.</a>
+      on many all-in-one python installers like <a href="https://www.continuum.io/downloads">Anaconda.</a> </p>
     <h4>SQL</h4>
     <p>
       SQL is a specialized programming language used with databases. SQL is a <i>declarative</i> 
@@ -38,6 +39,12 @@
       <a href="https://addons.mozilla.org/en-US/firefox/addon/sqlite-manager/">SQLite Manager</a>,
       for the lessons.
     </p>
+  	 <p>
+	   We also recommend installing <a href="https://sqlitestudio.pl/index.rvt">SQLite Studio</a> as well. There are often memory allocation limits built into most web browsers
+    which can make imporing large amount of data into a SQLite database challenging. SQLite Studio does not have this problem. It is also
+    a relatively small application with a very intutitive GUI.
+	</p>
+  
   </div>
 </div>
 
@@ -48,7 +55,8 @@
     <h4>Python</h4>
     <ul>
       <li>
-        Download and install  <a href="http://continuum.io/anacondace.html">Anaconda CE</a>.
+        Download and install  <a href="https://www.continuum.io/downloads#windows">Anaconda</a>.
+	      Very specifically download the <em>graphical installer for the 3.6 version</em>
       </li>
       <li>
         Use all of the defaults for installation
@@ -56,23 +64,38 @@
         make sure to check <strong>Make Anaconda the default Python</strong>.
       </li>
     </ul>
-    </ul>
+    
     <h4>Editor</h4>
     <p>
       <a href="http://notepad-plus-plus.org/">Notepad++</a> is a
       popular free code editor for Windows.
-      Be aware that you must add its installation directory to your system path
+	    (<b>NOTE:</b> Be aware that you must add its installation directory to your system path
       in order to launch it from the command line
-      (or have other tools like Git launch it for you).
-      Please ask your instructor to help you do this.
+      or have other tools like Git launch it for you.
+      Please ask a TA to help you with this if you are interested.)
     </p>
+    <h4>SQLite Studio</h4>
+   <p>
+	Download <a href="https://sqlitestudio.pl/index.rvt">SQLite Studio</a> to your desktop and follow the directions for installation.
+	   </p>
   </div>
   <div class="span6">
+    <h4>Bash Shell on Windows</h4>
+    <ul>
+      <li>
+        Windows 10 - Please go to the following <a href="https://msdn.microsoft.com/en-us/commandline/wsl/about">website</a>
+	which has great instructions for installing the Bash Shell for Windows.
+      </li>
+      <li>
+        Windows 8 and earlier -  Please go to the following <a href="http://www.mcclean-cooper.com/valentino/cygwin_install/">website</a>
+	 and follow the instructions for installing Cygwin a Unix like environment that will give you access to Bash. The installation is slightly
+	  more involved. If you find yourself having trouble insalling it, we will take care of it on the first say of camp.
+      </li>
+    </ul>
     <h4 id="firefox-sqlite">Firefox SQLite Plugin</h4>
     <p>
-      Windows doesn't have <code>sqlite3</code> available on the the command line,
-      so we will use <a href="https://addons.mozilla.org/en-US/firefox/addon/sqlite-manager/">this plugin</a>
-      for Firefox instead.
+      Please download the <a href="https://addons.mozilla.org/en-US/firefox/addon/sqlite-manager/">SQLite manager plugin</a>
+      for Firefox.
       To install it:
     </p>
     <ul>
@@ -106,7 +129,8 @@
     <h4>Python</h4>
     <ul>
       <li>
-        Download and install  <a href="http://continuum.io/anacondace.html">Anaconda CE</a>.
+          Download and install  <a href="https://www.continuum.io/downloads#macos">Anaconda</a>.
+	      Very specifically download the <em>graphical installer for the 3.6 version</em>.
       </li>
       <li>
         Use all of the defaults for installation
@@ -117,11 +141,15 @@
     <h4>Editor</h4>
     <p>
       We recommend
-      <a href="http://www.barebones.com/products/textwrangler/">Text Wrangler</a> or
       <a href="http://www.sublimetext.com/">Sublime Text</a>.
       In a pinch, you can use <code>nano</code> or <code>vi</code>,
       which should be pre-installed.
     </p>
+  <h4>SQLite Studio</h4>
+   <p>
+	Download <a href="https://sqlitestudio.pl/index.rvt">SQLite Studio</a> to your desktop and follow the directions for installation.
+	   </p>  
+
   </div>
   <div class="span6">
     <h4 id="firefox-sqlite">Firefox SQLite Plugin</h4>

@@ -1,0 +1,11 @@
+CREATE TABLE Directors (
+	company_name VARCHAR,
+	director_name VARCHAR,
+	title TEXT,
+	age REAL,
+	salary REAL,
+	boards INTEGER,
+	hq_city VARCHAR,
+	hq_state TEXT,
+	data_year INTEGER
+);

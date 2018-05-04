@@ -141,13 +141,13 @@ the "asking", but we'll get to that later.)
 
 See this for a full-blown example of what this can look like:
 
-https://dev.twitter.com/docs/platform-objects/users
+https://dev.twitter.com/overview/api/users
 
 -----------------------
 
 The "verbs" that we'll be using to begin with are part of something
 called the "REST API".  API, we already know.  REST is an
-'alomst-acronym' that stands for:
+'almost-acronym' that stands for:
 
    "REpresentational State Transfer"
 
@@ -155,7 +155,7 @@ The idea behind a RESTful systems is that you have
 
     * a "service" that:
 	* holds "state"---"state" is another word for
-	  information or, collquially, "stuff"; and 
+	  information or, colloquially, "stuff"; and 
 	* has one or more "clients" that interact with it.
 
     * A client makes a "request" that: 
@@ -190,9 +190,9 @@ The user in question is:
 Open that page in a tab.  There are also two developer pages that
 describe what we need.  Open these two pages in their own tabs:
 
-    https://dev.twitter.com/docs/platform-objects   (the nouns)
+    https://dev.twitter.com/overview/api   (the nouns)
 
-    https://dev.twitter.com/docs/api/1.1   (the verbs)
+    https://dev.twitter.com/rest/public   (the verbs)
 
 The verb we will use to get the tweet is "statuses/user_timeline".
 Click on that.  Notice that it takes potentially many arguments: we
@@ -289,33 +289,6 @@ going into.  But, if you ask for 20, you can't assume there will be 20.
 
 --------------------------------
 
-What if we want to do this for the user *running* the program, rather
-than UMBigData?  There's a *verb* for that!  Go back to the REST 1.1
-API page, and click on:
-
-     GET accounts/settings
-
-So we can get the authenticated user (you), by doing this:
-
-    settings = t.account.settings()
-    user = settings['screen_name'];
-
-That returns a user object, and that object includes the screen_name
-of the authenticated user.  So, we will add that to our
-get-four-tweets script, in
-
-    currentUser.py
-
-If you run this one, you should see *your* most recent four tweets,
-rather than UMBigData's.
-
-Note: for some reason, even though this is a GET, it is encoded as a
-POST.  So, our Sample App framework has been given read/write access.
-In other words, be careful, or you'll be posting a bunch of tweets as
-yourself!
-
--------------------
-
 You can even use this to get all of the tweets that a user has
 ever tweeted.  The trick is you keep reading tweets until you can't get
 any more.  The file
@@ -346,15 +319,15 @@ total printed, sleep for a bit so we can see what is going on, and
 continue. 
 
     while True :
-	tweets = t.statuses.user_timeline(screen_name=user, 
+		tweets = t.statuses.user_timeline(screen_name=user, 
 					  count=200,
 					  max_id = nextID)
-	nextID, count = printTexts(tweets)
-	if (nextID is None) :
-	    break
-	nextID = nextID - 1
-	total = total + count
-	time.sleep(2)
+		nextID, count = printTexts(tweets)
+		if (nextID is None) :
+			break
+		nextID = nextID - 1
+		total = total + count
+		time.sleep(2)
     
 
 We print the total at the end.  Note that we might not get every
@@ -371,46 +344,40 @@ exploration.
 A simple set of examples can be found in search.py
 
 The query language is very flexible.  For example, compare the current
-mentions of the Detroit Tigers (who lost on a walk-off *balk* late
-last night in Cleveland):
+mentions of the Dallas Stars (who lost in game 7):
 
-    result = t.search.tweets(q="Detroit Tigers")
+    result = t.search.tweets(q="Dallas Stars")
 
-To those before May 15th (when they were on a hot streak):
+To those before May 11th:
 
-    result = t.search.tweets(q="Detroit Tigers until:2014-05-15")
-
-You can also see some of my mentions of Tweet
-
-    result = t.search.tweets(q="from:bdnoble tweet")
+    result = t.search.tweets(q="Dallas Stars until:2016-05-11")
 
 
 --------------------------
 
 You can also search based on location---this is useful if you want to
 compare reactions to the same event across different areas of the
-country.  For example, last night the LA Kings played the Chicago
-Blackhawks in the NHL playoffs.  So, you might want to see what each
+country.  For example, last night the St. Louis Blues played the Dallas
+Stars in the NHL playoffs.  So, you might want to see what each
 is saying about "hockey".
 
 First, you need a way to identify each place.  The file places.py
-gives some examples of looking things up.  For LA and Chicago, we just
-need the "Place ID".  For Ann Arbor, we'll want the "bounding
-box"---the square that encompasses all of the city.  We can look up
-any one of them this way:
+gives some examples of looking things up.  For St. Louis and Dallas, we 
+just need the "Place ID".  We can look up any one of them this way:
 
-    annarbor = t.geo.search(query="Ann Arbor", granularity="city")
+    geodata = t.geo.search(query="St. Louis", granularity="city")
+	geoid = geodata['result']['places'][0]['id']
 
-Here are the location ids we need:
+Here are the location ids we need, retrieved from the above code:
 
-3b77caf94bfc81fe    Los Angeles, CA
-1d9a5370a355ab0c      Chicago, IL
+0570f015c264cbd9    St. Louis
+18810aa5b43e76c7      Dallas
 
 Once we have those locations, we can get hockey mentions for both
 cities:
 
-    result = t.search.tweets(q="hockey place:3b77caf94bfc81fe")
-    result = t.search.tweets(q="hockey place:1d9a5370a355ab0c")
+    result = t.search.tweets(q="hockey place:0570f015c264cbd9")
+    result = t.search.tweets(q="hockey place:18810aa5b43e76c7")
 
 (Note that this can be *from* that place, or *about* that place.)
 

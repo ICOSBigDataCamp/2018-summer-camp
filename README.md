@@ -1,7 +1,6 @@
 ICOS Big Data Summer Camp
 -------------------------
 
-<<<<<<< HEAD
 This is a repository for the ICOS Big Data Summer Camp being held at the University of Michigan from May 14th-18th 2018.
 
 Description: 
@@ -25,4 +24,3 @@ Please refer to the [license](https://github.com/ICOSBigDataCamp/2018-summer-cam
 This is a repository for the ICOS Big Data Summer Camp being held at the University of Michigan from May 14-18 2017.
 
 Please visit the [main website.](https://icosbigdatacamp.github.io/2018-summer-camp/)
->>>>>>> cc0ee6e8e32ca74982e1952533dd5dd771a7e3ee

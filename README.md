@@ -21,6 +21,6 @@ Social and organizational life are increasingly conducted online through electro
 ### License
 Please refer to the [license](https://github.com/ICOSBigDataCamp/2018-summer-camp/blob/master/LICENSE.md) for accreditation and usage description. 
 =======
-This is a repository for the ICOS Big Data Summer Camp being held at the University of Michigan from May 14-18 2017.
+This is a repository for the ICOS Big Data Summer Camp being held at the University of Michigan from May 14-18 2018.
 
 Please visit the [main website.](https://icosbigdatacamp.github.io/2018-summer-camp/)
